@@ -47,20 +47,16 @@ function bumpChart(chartYaml: string): string {
 //console.log(match);
 
 async function run() {
-  const githubToken = core.getInput('token');
-
-  console.log('Hello World!');
-
   const inputFileName = core.getInput('input_file');
 
   const file = readFile(inputFileName);
 
   const bumpedFile = bumpChart(file);
 
-  const octokit = github.getOctokit(githubToken);
-
   fs.writeFileSync(inputFileName, bumpedFile);
 
+  //const githubToken = core.getInput('token');
+  //const octokit = github.getOctokit(githubToken);
   //octokit.git.createCommit();
 }
 
