@@ -12,6 +12,9 @@ function readFile(filename: string): string {
 function bumpVersion(version: string) {
   const split = version.split('.');
   const versionBump = split[0] + '.' + split[1] + '.' + (Number.parseInt(split[2]) + 1);
+
+  console.log(`Bumping version ${version} to ${versionBump}`);
+
   return versionBump;
 }
 
@@ -54,7 +57,11 @@ async function run() {
 
   const bumpedFile = bumpChart(file);
 
-  console.log(bumpedFile);
+  const octokit = github.getOctokit(githubToken);
+
+  fs.writeFileSync(inputFileName, bumpedFile);
+
+  //octokit.git.createCommit();
 }
 
 run().catch((error) => core.setFailed('Workflow failed! ' + error.message));
