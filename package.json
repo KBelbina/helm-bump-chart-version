@@ -1,0 +1,32 @@
+{
+  "name": "helm-bump-chart-version",
+  "version": "1.0.0",
+  "description": "Github Action to bump the chart version #",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && ncc build lib/main.js",
+    "dev": "nodemon src/main.ts",
+    "format": "prettier --write **/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KBelbina/helm-bump-chart-version.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KBelbina/helm-bump-chart-version/issues"
+  },
+  "homepage": "https://github.com/KBelbina/helm-bump-chart-version#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3",
+    "ts-node": "^9.0.0"
+  }
+}

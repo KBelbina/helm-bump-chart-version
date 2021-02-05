@@ -1,0 +1,16 @@
+name: 'Helm Bump Chart Version'
+description: 'Bumps the chart and the app version in a Helm Chart'
+author: Luke Belbina
+branding:
+  icon: repeat
+  color: blue
+inputs:
+  input_file:
+    description: 'The Chart.yml to read as input.'
+    required: true
+outputs:
+  result:
+    description: 'The result string after substitutions.'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

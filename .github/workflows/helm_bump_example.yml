@@ -1,0 +1,19 @@
+name: Helm Bump Example Workflow
+on:
+  push:
+    branches:
+      - 'v1'
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    name: Run the benchmarks
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Bump chart version
+        uses: https://github.com/KBelbina/helm-bump-chart-version@v1
+        # with:
+        #   name: benchmark_results
+        #   path: benchmark.json
