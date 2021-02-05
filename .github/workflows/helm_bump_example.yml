@@ -16,3 +16,14 @@ jobs:
         uses: KBelbina/helm-bump-chart-version@v1
         with:
           input_file: example-helm-chart.yml
+
+      - name: Commit version
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git commit -m "Bump version" -a
+
+      - name: Push version
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
