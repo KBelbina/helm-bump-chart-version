@@ -14,6 +14,5 @@ jobs:
 
       - name: Bump chart version
         uses: https://github.com/KBelbina/helm-bump-chart-version@v1
-        # with:
-        #   name: benchmark_results
-        #   path: benchmark.json
+        with:
+          input_file: example-helm-chart.yml
