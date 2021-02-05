@@ -48,15 +48,13 @@ async function run() {
 
   console.log('Hello World!');
 
-  //   const inputFileName = core.getInput('input_file');
+  const inputFileName = core.getInput('input_file');
 
-  //   const file = readFile(inputFileName);
+  const file = readFile(inputFileName);
 
-  //   const bumpedFile = bumpChart(file);
+  const bumpedFile = bumpChart(file);
 
-  //   //const octokit = github.getOctokit(githubToken);
-
-  //   console.log(bumpedFile);
+  console.log(bumpedFile);
 }
 
 run().catch((error) => core.setFailed('Workflow failed! ' + error.message));

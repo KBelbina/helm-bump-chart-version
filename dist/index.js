@@ -80,11 +80,10 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const githubToken = core.getInput('token');
         console.log('Hello World!');
-        //   const inputFileName = core.getInput('input_file');
-        //   const file = readFile(inputFileName);
-        //   const bumpedFile = bumpChart(file);
-        //   //const octokit = github.getOctokit(githubToken);
-        //   console.log(bumpedFile);
+        const inputFileName = core.getInput('input_file');
+        const file = readFile(inputFileName);
+        const bumpedFile = bumpChart(file);
+        console.log(bumpedFile);
     });
 }
 run().catch((error) => core.setFailed('Workflow failed! ' + error.message));
